@@ -1,6 +1,6 @@
 package com.benjaminsproule.swagger.gradleplugin
 
-import com.benjaminsproule.swagger.gradleplugin.extension.SwaggerExtension
+import com.benjaminsproule.swagger.gradleplugin.extension.SwaggerSpecExtension
 import groovy.json.JsonSlurper
 import org.gradle.api.Project
 import org.gradle.api.internal.ClosureBackedAction
@@ -34,7 +34,7 @@ class GradleSwaggerPluginTest {
         project.plugins.apply JavaPlugin
 
         def expectedSwaggerDirectory = "${project.buildDir}/swaggerui"
-        project.extensions.configure(SwaggerExtension, new ClosureBackedAction<SwaggerExtension>(
+        project.extensions.configure(SwaggerSpecExtension, new ClosureBackedAction<SwaggerSpecExtension>(
             {
                 apiSource {
                     locations = ['com.benjaminsproule']

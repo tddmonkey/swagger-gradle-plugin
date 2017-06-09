@@ -1,7 +1,7 @@
 package com.benjaminsproule.swagger.gradleplugin
 
 import com.benjaminsproule.swagger.gradleplugin.extension.ApiSourceExtension
-import com.benjaminsproule.swagger.gradleplugin.extension.SwaggerExtension
+import com.benjaminsproule.swagger.gradleplugin.extension.SwaggerSpecExtension
 import com.benjaminsproule.swagger.gradleplugin.logger.Slf4jWrapper
 import com.github.kongchen.swagger.docgen.AbstractDocumentSource
 import com.github.kongchen.swagger.docgen.GenerateException
@@ -25,7 +25,7 @@ class GenerateSwaggerDocsTask extends DefaultTask {
 
     @TaskAction
     generateSwaggerDocuments() {
-        SwaggerExtension swaggerExtension = project.swagger
+        SwaggerSpecExtension swaggerExtension = project.swaggerSpec
 
         if (swaggerExtension == null) {
             throw new GradleException('You must configure at least one swaggerPluginExtensions element')

@@ -4,12 +4,12 @@ import groovy.transform.ToString
 import org.gradle.api.Project
 
 @ToString(includeNames = true)
-class SwaggerExtension {
+class SwaggerSpecExtension {
     Collection<ApiSourceExtension> apiSourceExtensions = new ArrayList<>()
 
     private Project project
 
-    SwaggerExtension(Project project) {
+    SwaggerSpecExtension(Project project) {
         this.project = project
     }
 
